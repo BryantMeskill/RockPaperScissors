@@ -1,7 +1,3 @@
-const computerSelection = computerPlay();
-let playerSelection = prompt(
-  "Please enter rock, paper, or scissors: "
-).toLowerCase();
 function computerPlay() {
   x = "rock";
   y = "paper";
@@ -46,14 +42,24 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-playRound(playerSelection, computerSelection);
-
-if (j > k) {
-  console.log(
-    `You won the series, with a final score of ${j} to ${k} with ${d} draw(s).`
-  );
-} else {
-  console.log(
-    `You won the series, with a final score of ${j} to ${k} with ${d} draw(s).`
-  );
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const computerSelection = computerPlay();
+    let playerSelection = prompt(
+      "Please enter rock, paper, or scissors: "
+    ).toLowerCase();
+    computerPlay();
+    playRound(playerSelection, computerSelection);
+  }
+  if (j > k) {
+    console.log(
+      `You won the series, with a final score of ${j} wins to ${k} losses with ${d} draw(s).`
+    );
+  } else {
+    console.log(
+      `You lost the series, with a final score of ${j} wins to ${k} losses with ${d} draw(s).`
+    );
+  }
 }
+
+game();
