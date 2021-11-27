@@ -2,7 +2,10 @@ function computerPlay() {
   x = "rock";
   y = "paper";
   z = "scissors";
-  rng = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+  //math.floor returns largest int <= a given number
+  //math.random() multiplied by max + min (3 + 1)
+  //max being highest possible result
+  rng = Math.floor(Math.random() * 3 + 1);
   if (rng === 1) {
     return x;
   } else if (rng === 2) {
@@ -15,6 +18,7 @@ function computerPlay() {
 let d = 0;
 let j = 0;
 let k = 0;
+//variable incrementing used for tallying a winner and draw(s).
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     console.log(`Draw, you both picked ${playerSelection}`);
@@ -45,6 +49,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
+    //.toLowerCase() allows the user to be case insensitive.
     let playerSelection = prompt(
       "Please enter rock, paper, or scissors: "
     ).toLowerCase();
