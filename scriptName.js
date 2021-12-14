@@ -1,11 +1,14 @@
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
+const x = "rock";
+const y = "paper";
+const z = "scissors";
 let d = 0;
 let j = 0;
 let k = 0;
 
 function computerPlay() {
-  const x = "rock";
-  const y = "paper";
-  const z = "scissors";
   //math.floor returns largest int <= a given number
   //math.random() multiplied by max + min (3 + 1)
   //max being highest possible result
@@ -18,6 +21,21 @@ function computerPlay() {
     return z;
   }
 }
+
+rockBtn.addEventListener("click", () => {
+  let computerSelection = computerPlay();
+  playRound("rock", computerSelection);
+});
+
+paperBtn.addEventListener("click", () => {
+  let computerSelection = computerPlay();
+  playRound("paper", computerSelection);
+});
+
+scissorsBtn.addEventListener("click", () => {
+  let computerSelection = computerPlay();
+  playRound("scissors", computerSelection);
+});
 
 //variable incrementing used for tallying a winner and draw(s).
 function playRound(playerSelection, computerSelection) {
@@ -47,7 +65,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
+/**function game() {
   for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay();
     //.toLowerCase() allows the user to be case insensitive.
@@ -67,5 +85,4 @@ function game() {
     );
   }
 }
-
-game();
+*/
