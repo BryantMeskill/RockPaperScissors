@@ -1,0 +1,78 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+
+.buttons {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  font-size: 40px;
+  font-family: "roboto", sans-serif;
+  font-weight: 200;
+}
+
+.rock:hover {
+  transform: scale(1.1);
+  border-color: #ff2600;
+  box-shadow: 0 0 1rem #ff2600;
+}
+
+.paper:hover {
+  transform: scale(1.1);
+  border-color: #0051ff;
+  box-shadow: 0 0 1rem #0051ff;
+}
+
+.scissors:hover {
+  transform: scale(1.1);
+  border-color: #00ff00;
+  box-shadow: 0 0 1rem #00ff00;
+}
+
+.div {
+  color: aliceblue;
+  font-size: 25px;
+  font-family: "roboto", sans-serif;
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.verdict {
+  size: 60px;
+  padding: 20px;
+  color: aliceblue;
+  font-family: "roboto", sans-serif;
+  animation: bounce 0.5s;
+}
+
+.title {
+  font-family: "Bebas Neue", cursive;
+  font-size: 50px;
+  color: aliceblue;
+  padding: 30px;
+}
+
+.info {
+  color: aliceblue;
+}
