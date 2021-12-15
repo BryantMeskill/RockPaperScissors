@@ -84,11 +84,17 @@ function playRound(playerSelection, computerSelection) {
     resultsBox.removeChild(tally);
     verdict.textContent = "Congratulations, you win! Thanks for playing.";
     resultsBox.appendChild(verdict);
+    rockBtn.classList.add("disable");
+    paperBtn.classList.add("disable");
+    scissorsBtn.classList.add("disable");
   } else if (k >= 5) {
     resultsBox.removeChild(roundWinner);
     resultsBox.removeChild(tally);
     verdict.textContent =
       "Better luck next time, you lose! Thanks for playing.";
     resultsBox.appendChild(verdict);
+    rockBtn.classList.add("disable");
+    paperBtn.classList.add("disable");
+    scissorsBtn.classList.add("disable");
   }
 }
