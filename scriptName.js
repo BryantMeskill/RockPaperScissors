@@ -37,52 +37,57 @@ scissorsBtn.addEventListener("click", () => {
   playRound("scissors", computerSelection);
 });
 
+const resultsBox = document.querySelector(".results");
+const roundWinner = document.createElement("div");
+const tally = document.createElement("div");
+roundWinner.classList.add(".div");
+
 //variable incrementing used for tallying a winner and draw(s).
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    console.log(`Draw, you both picked ${playerSelection}`);
+    roundWinner.textContent = `Draw, you both picked ${playerSelection}!`;
+    resultsBox.appendChild(roundWinner);
     d++;
+    tally.textContent = `Current score: ${j} wins, ${k} losses, ${d} draw(s).`;
+    resultsBox.appendChild(tally);
   } else if (playerSelection === "paper" && computerSelection === x) {
-    console.log(
-      `You win this round, ${playerSelection} beats ${computerSelection}!`
-    );
+    roundWinner.textContent = `You win this round, ${playerSelection} beats ${computerSelection}!`;
+    resultsBox.appendChild(roundWinner);
     j++;
+    tally.textContent = `Current score: ${j} wins, ${k} losses, ${d} draw(s).`;
+    resultsBox.appendChild(tally);
   } else if (playerSelection === "scissors" && computerSelection === y) {
-    console.log(
-      `You win this round, ${playerSelection} beats ${computerSelection}!`
-    );
+    roundWinner.textContent = `You win this round, ${playerSelection} beats ${computerSelection}!`;
+    resultsBox.appendChild(roundWinner);
     j++;
+    tally.textContent = `Current score: ${j} wins, ${k} losses, ${d} draw(s).`;
+    resultsBox.appendChild(tally);
   } else if (playerSelection === "rock" && computerSelection === z) {
-    console.log(
-      `You win this round, ${playerSelection} beats ${computerSelection}!`
-    );
+    roundWinner.textContent = `You win this round, ${playerSelection} beats ${computerSelection}!`;
+    resultsBox.appendChild(roundWinner);
     j++;
+    tally.textContent = `Current score: ${j} wins, ${k} losses, ${d} draw(s).`;
+    resultsBox.appendChild(tally);
   } else {
-    console.log(
-      `You lose this round, ${computerSelection} beats ${playerSelection}!`
-    );
+    roundWinner.textContent = `You lose this round, ${computerSelection} beats ${playerSelection}!`;
+    resultsBox.appendChild(roundWinner);
     k++;
+    tally.textContent = `Current score: ${j} wins, ${k} losses, ${d} draw(s).`;
+    resultsBox.appendChild(tally);
+  }
+  const verdict = document.createElement("h1");
+  verdict.style.color = "aliceblue";
+  verdict.style.size = "60px";
+  if (j >= 5) {
+    resultsBox.removeChild(roundWinner);
+    resultsBox.removeChild(tally);
+    verdict.textContent = "Congratulations, you win! Thanks for playing.";
+    resultsBox.appendChild(verdict);
+  } else if (k >= 5) {
+    resultsBox.removeChild(roundWinner);
+    resultsBox.removeChild(tally);
+    verdict.textContent =
+      "Better luck next time, you lose! Thanks for playing.";
+    resultsBox.appendChild(verdict);
   }
 }
-
-/**function game() {
-  for (let i = 0; i < 5; i++) {
-    const computerSelection = computerPlay();
-    //.toLowerCase() allows the user to be case insensitive.
-    let playerSelection = prompt(
-      "Please enter rock, paper, or scissors: "
-    ).toLowerCase();
-    computerPlay();
-    playRound(playerSelection, computerSelection);
-  }
-  if (j > k) {
-    console.log(
-      `You won the series, with a final score of ${j} wins to ${k} losses with ${d} draw(s).`
-    );
-  } else {
-    console.log(
-      `You lost the series, with a final score of ${j} wins to ${k} losses with ${d} draw(s).`
-    );
-  }
-}
-*/
