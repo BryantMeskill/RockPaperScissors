@@ -41,9 +41,6 @@ body {
   animation: bounce 0.5s;
 }
 
-.results {
-}
-
 @keyframes bounce {
   0% {
     transform: scale(0.1);
