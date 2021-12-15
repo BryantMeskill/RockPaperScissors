@@ -10,6 +10,10 @@ body {
   margin-bottom: 30px;
 }
 
+.disable {
+  pointer-events: none;
+}
+
 .btn {
   font-size: 40px;
   font-family: "roboto", sans-serif;
