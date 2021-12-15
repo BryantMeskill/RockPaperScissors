@@ -40,7 +40,8 @@ scissorsBtn.addEventListener("click", () => {
 const resultsBox = document.querySelector(".results");
 const roundWinner = document.createElement("div");
 const tally = document.createElement("div");
-roundWinner.classList.add(".div");
+tally.classList.add("div");
+roundWinner.classList.add("div");
 
 //variable incrementing used for tallying a winner and draw(s).
 function playRound(playerSelection, computerSelection) {
@@ -76,8 +77,7 @@ function playRound(playerSelection, computerSelection) {
     resultsBox.appendChild(tally);
   }
   const verdict = document.createElement("h1");
-  verdict.style.color = "aliceblue";
-  verdict.style.size = "60px";
+  verdict.classList.add("verdict");
   if (j >= 5) {
     resultsBox.removeChild(roundWinner);
     resultsBox.removeChild(tally);
