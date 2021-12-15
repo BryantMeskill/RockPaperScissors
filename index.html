@@ -4,34 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;200;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheet.css" />
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
+    <h1 class="title">Click a button to play your hand, first to 5 wins!</h1>
     <div class="buttons">
-      <button class="rock">Rock</button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
+      <button class="rock btn">Rock</button>
+      <button class="paper btn">Paper</button>
+      <button class="scissors btn">Scissors</button>
     </div>
     <div class="results"></div>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: black;
-      }
-      .div {
-        color: aliceblue;
-      }
-      .title {
-        color: aliceblue;
-      }
-
-      .info {
-        color: aliceblue;
-      }
-    </style>
     <script src="scriptName.js"></script>
   </body>
 </html>
