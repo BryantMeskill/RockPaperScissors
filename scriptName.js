@@ -79,7 +79,7 @@ function playRound(playerSelection, computerSelection) {
     tally.textContent = `Current score: ${winTally} wins, ${lossTally} losses, ${drawTally} draw(s).`;
     resultsBox.appendChild(tally);
   }
-  //KNOWN ISSUE: You can continue to click an option until the message displayed is changed to a win or loss.
+
   const verdict = document.createElement("h1");
   verdict.classList.add("verdict");
   if (winTally >= 5) {
